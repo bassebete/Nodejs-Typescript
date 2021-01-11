@@ -1,11 +1,11 @@
 import { Controller, Get } from '@overnightjs/core';
-import {Response} from 'express';
+import { Request, Response } from 'express';
 
 @Controller('forecast')
 export class ForecastController {
 
   @Get('')
-  public getForecastForLoggesUser(_: Request, res: Response): void {
+  public getForecastForLoggedUser(_: Request, res: Response): void {
     res.send([{
       "time": "2020-04-26T00:00:00+00:00",
       "forecast": [{
@@ -38,6 +38,6 @@ export class ForecastController {
         "waveHeight": 0.46,
         "windDirection": 310.48
       }] }
-    ])
+    ]);
   }
 }
